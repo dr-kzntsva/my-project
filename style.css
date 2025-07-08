@@ -9,7 +9,14 @@ body {
     font-family: 'TT Lakes', sans-serif;
 }
 
-.raz{
+header{
+    display: flexbox;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__raz{
     width: 2px;
     height: 32px;
 }
