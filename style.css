@@ -1,287 +1,288 @@
 @font-face {
-  font-family: 'TT Lakes';
-  src: local('0'), url('./fonts/TTLakes-Regular.woff') format('woff'),
-    url('./fonts/TTLakes-Regular.ttf') format('truetype');
+  font-family: "TT Lakes";
+  src: local("0"), url("./fonts/TTLakes-Regular.woff") format("woff"),
+    url("./fonts/TTLakes-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
- }
- 
- @font-face {
-  font-family: 'TT Lakes';
-  src: local('0'), url('./fonts/TTLakes-Medium.woff') format('woff'),
-    url('./fonts/TTLakes-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "TT Lakes";
+  src: local("0"), url("./fonts/TTLakes-Medium.woff") format("woff"),
+    url("./fonts/TTLakes-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
- }
- 
- @font-face {
-  font-family: 'TT Lakes';
-  src: local('0'), url('./fonts/TTLakes-Bold.woff') format('woff'),
-    url('./fonts/TTLakes-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "TT Lakes";
+  src: local("0"), url("./fonts/TTLakes-Bold.woff") format("woff"),
+    url("./fonts/TTLakes-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
- }
+}
 
 body {
-    font-family: 'TT Lakes', sans-serif;
-    margin: 0; /* обнуление внешних отступов по умолчанию */
+  font-family: "TT Lakes", sans-serif;
+  margin: 0; /* обнуление внешних отступов по умолчанию */
 }
 
-main{
-    background: #F8F8F8;
-    padding: 0 16px; /* внутренний отступ 16px справа и слева*/
-    box-sizing: border-box; /* св-во, включающее padding и border в общую ширину экрана */
+main {
+  background: #f8f8f8;
+  padding: 0 16px; /* внутренний отступ 16px справа и слева*/
+  box-sizing: border-box; /* св-во, включающее padding и border в общую ширину экрана */
 }
 
-.header{
-    display: flex;
-    justify-content: space-between; /* св-во, которое управляет горизонтальным распределением элементов. Распределение элементов покраям с равным расстоянием между блоками*/
-    align-items: center; /* расположение элементов по центру */
-    height: 88px; 
-    padding: 0 16px; /* внутренний отступ 16px справа и слева, доп. прописываем, т.к. header за main */
+.header {
+  display: flex;
+  justify-content: space-between; /* св-во, которое управляет горизонтальным распределением элементов. Распределение элементов покраям с равным расстоянием между блоками*/
+  align-items: center; /* расположение элементов по центру */
+  height: 88px;
+  padding: 0 16px; /* внутренний отступ 16px справа и слева, доп. прописываем, т.к. header за main */
 }
 
-.header__left{
-    display: flex;
-    align-items: center;
-    gap: 16.73px; /* расстояние между иконками слева */
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 16.73px; /* расстояние между иконками слева */
 }
 
-.header__right{
-    display: flex;
-    align-items: center;
-    gap: 16px; /* расстояние между иконками справа */
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* расстояние между иконками справа */
 }
 
-.header__separator{ /* разделитель в хедере */
-    width: 2px;
-    height: 32px;
-    background-color: #EAEAEA;
+.header__separator {
+  /* разделитель в хедере */
+  width: 2px;
+  height: 32px;
+  background-color: #eaeaea;
 }
 
-.main__heading-title{
-    margin: 0;
-    font-weight: 700; /* начертание шрифта 700 - полужирный шрифт */
-    font-size: 28px;
-    line-height: 40px; /* пространства между строками */
-    letter-spacing: -0.6px; /* пространства между символами */
+.heading__title {
+  margin: 0;
+  font-weight: 700; /* начертание шрифта 700 - полужирный шрифт */
+  font-size: 28px;
+  line-height: 40px; /* пространства между строками */
+  letter-spacing: -0.6px; /* пространства между символами */
 }
 
-.main__heading{
-    padding-top: 24px;
-    display: flex;
-    align-items: center;
+.heading {
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
 }
 
-.main__heading::before{
-    position: absolute;
-    content: '';
-    height: 40px;
-    width: 8px;
-    border-radius: 4px; /* закругление углов */
-    background-color: #41F6D7;
-    left: -4px;
+.heading::before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 8px;
+  border-radius: 4px; /* закругление углов */
+  background-color: #41f6d7;
+  left: -4px;
 }
 
-.main__list{
-    list-style-type: none;
-    display: flex;
-    padding: 0; /* обнуление внутренних отступов по умолчанию */
-    margin: 24px 0; /* внешний отступ 24px сверху и снизу */
-    overflow: scroll; /* добавление скролла (бегунок прокрутки) */
+.list {
+  list-style-type: none;
+  display: flex;
+  padding: 0; /* обнуление внутренних отступов по умолчанию */
+  margin: 24px 0; /* внешний отступ 24px сверху и снизу */
+  overflow: scroll; /* добавление скролла (бегунок прокрутки) */
 }
 
-.main__list::-webkit-scrollbar { 
+.list::-webkit-scrollbar {
   display: none; /* скрытие скроллбар (прокрутку) */
 }
 
-.main__list__element{
-    white-space: nowrap; /* запрет на перенос слов у элементов списка */
-    padding: 8px 16px; /* внутренние отступы 8px сверху и снизу, 16px справа и слева */
-    border: 2px solid transparent;  /* прозрачная рамка по умолчанию */
-    box-sizing: border-box; /* св-во, включающее padding и border в общую ширину экрана */
-    font-weight: 500;
-    color: #7E7E82;
+.list__element {
+  white-space: nowrap; /* запрет на перенос слов у элементов списка */
+  padding: 8px 16px; /* внутренние отступы 8px сверху и снизу, 16px справа и слева */
+  border: 2px solid transparent; /* прозрачная рамка по умолчанию */
+  box-sizing: border-box; /* св-во, включающее padding и border в общую ширину экрана */
+  font-weight: 500;
+  color: #7e7e82;
 }
 
-.main__list__element:hover{
-   border-color: #B8FFEC;
-   border-radius: 6px; /* закругление углов */
+.list__element:hover {
+  border-color: #b8ffec;
+  border-radius: 6px; /* закругление углов */
 }
 
-.main__content {
+.content {
   display: flex;
   flex-direction: column;
 }
 
-.main__content__description__paragraph{
-    margin: 0;
+.description__paragraph {
+  margin: 0;
 }
 
-.main__content__description{
-    margin: 0; /* обнуление внешних отступов по умолчанию */
-    font-weight: 400;
-    color: #1B1C21;
-    font-size: 14px;
-    line-height: 18px; /* пространства между строками */
-    letter-spacing: 0.2px; /* пространства между символами */
+.description {
+  margin: 0; /* обнуление внешних отступов по умолчанию */
+  font-weight: 400;
+  color: #1b1c21;
+  font-size: 14px;
+  line-height: 18px; /* пространства между строками */
+  letter-spacing: 0.2px; /* пространства между символами */
 }
 
-.main__content__read-more{
-    display: flex;
-    align-items: center;
-    margin: 16px 0; /* внешний отступ 16px справа и слева */
-    gap: 8px;
+.read-more {
+  display: flex;
+  align-items: center;
+  margin: 16px 0; /* внешний отступ 16px справа и слева */
+  gap: 8px;
 }
 
-.main__content__read-more__link{
-    margin: 0;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px; /* пространства между строками */
-    letter-spacing: -0.2px; /* пространства между символами */
-    color: #1B1C21;
+.read-more__link {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px; /* пространства между строками */
+  letter-spacing: -0.2px; /* пространства между символами */
+  color: #1b1c21;
 }
 
-.main__content__picture {
-    margin: 0 -16px; /* внешний отступ -16px справа и слева, чтобы не учитывать отступ main */
-    width: 100vw; /* масштабирование изображения на весь размер экрана */
+.content__image {
+  margin: 0 -16px; /* внешний отступ -16px справа и слева, чтобы не учитывать отступ main */
+  width: 100vw; /* масштабирование изображения на весь размер экрана */
 }
 
-.header__icon--hidden, 
-.header__separator-left--hidden, 
-.main__content__description__paragraph--expanded, 
-.main__content__description__paragraph--wide, .main__heading__menu{
-    display: none;
+.header__icon--hidden,
+.header__separator--left-hidden,
+.description__paragraph--expanded,
+.description__paragraph--wide,
+.menu {
+  display: none;
 }
 
 @media (min-width: 768px) {
-    
-    main{
-        padding: 0 24px;
-    }
+  main {
+    padding: 0 24px;
+  }
 
-    .header{
-        padding: 0 24px;
-    }
+  .header {
+    padding: 0 24px;
+  }
 
-    .header__separator-left--hidden{
-        display: block;
-    }
+  .header__separator--left-hidden {
+    display: block;
+  }
 
-    .header__left{
-        gap: 20px;
-    }
+  .header__left {
+    gap: 20px;
+  }
 
-    .header__icon--hidden{
-        display: block;
-        align-items: center;
-    }
-    
-    .header__right{
-        gap: 16px;
-    }
-    
-    .header__separator-right--hidden{
-        display: block;
-        width: 2px;
-        height: 32px;
-        background-color: #EAEAEA;
-        margin: 0 4px;
-    }
+  .header__icon--hidden {
+    display: block;
+    align-items: center;
+  }
 
-    .main__list{
-        margin: 32px 0;
-    }
+  .header__right {
+    gap: 16px;
+  }
 
-    .main__content {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 48px;
-    }
+  .header__separator--right-hidden {
+    display: block;
+    width: 2px;
+    height: 32px;
+    background-color: #eaeaea;
+    margin: 0 4px;
+  }
 
-    .main__content__description {
-        flex: 1;
-    }
+  .list {
+    margin: 32px 0;
+  }
 
-    .main__content__picture {
-        margin: 0;
-        width: 360px;
-        height: auto;
-        object-fit: cover; /* изображение подстраивается под размер контейнера */
-        border-top-left-radius: 6px;
-        border-bottom-left-radius: 6px; 
-    }
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 48px;
+  }
 
-    .main__content__description__paragraph--expanded{
-        display: block;
-        margin-top: 1.5em; 
-    }
+  .description {
+    flex: 1;
+  }
+
+  .content__image {
+    margin: 0;
+    width: 360px;
+    height: auto;
+    object-fit: cover; /* изображение подстраивается под размер контейнера */
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  .description__paragraph--expanded {
+    display: block;
+    margin-top: 1.5em;
+  }
 }
 
-@media (min-width: 1120px){
+@media (min-width: 1120px) {
+  main {
+    padding: 0 32px;
+  }
 
-    main{
-        padding: 0 32px;
-    }
+  .header {
+    padding: 0 32px;
+  }
 
-    .header{
-        padding: 0 32px;
-    }
+  .content {
+    gap: 36px;
+  }
 
-    .main__content {
-        gap: 36px;
-    }
+  .header {
+    display: none;
+  }
 
-    .header{
-        display: none;
-    }
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-top: 42px;
+  }
 
-    .main__heading {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        padding-top: 42px;
-    }
+  .menu {
+    display: flex;
+    gap: 32px;
+  }
 
-    .main__heading__menu {
-        display: flex;
-        gap: 32px;
-    }
+  .heading::before {
+    left: -36px;
+  }
 
-    .main__heading::before{
-        left: -36px;
-    }
+  .menu__item--bid,
+  .menu__item--search {
+    display: flex;
+    align-items: center; /* по вертикали по центру */
+    gap: 8px;
+    margin: 0;
+  }
 
-    .main__heading__menu__bid, .main__heading__menu__search{
-        display: flex;
-        align-items: center; /* по вертикали по центру */
-        gap: 8px;
-        margin: 0; 
-    }
-    
-    .main__list{
-        overflow: hidden;
-        display: flex;
-        flex-wrap: wrap;
-    }
+  .list {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    .main__content__picture {
-        margin: 0;
-        width: 532px;
-        height: auto;
-        object-fit: cover; /* изображение подстраивается под размер контейнера */
-        border-top-left-radius: 6px;
-        border-bottom-left-radius: 6px; 
-    }
+  .content__image {
+    margin: 0;
+    width: 532px;
+    height: auto;
+    object-fit: cover; /* изображение подстраивается под размер контейнера */
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
 
-    .main__content__description__paragraph--wide{
-        display: inline;
-    }
+  .description__paragraph--wide {
+    display: inline;
+  }
 }
