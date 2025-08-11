@@ -240,7 +240,7 @@ body {
     gap: 20px;
   }
 
-  .header__icon--hidden {
+  .header__control--hidden {
     display: block;
     align-items: center;
   }
