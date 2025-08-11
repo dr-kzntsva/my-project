@@ -8,81 +8,134 @@
   </head>
   <body>
     <header class="header">
-      <div class="header__left">
-        <img src="img/burger.svg" alt="Меню" class="header__icon" />
-        <div class="header__separator header__separator--left-hidden"></div>
+      <div class="header__section header__section--left">
+        <button class="header__menu-btn btn-reset btn-animated">
+          <img src="img/burger.svg" alt="Меню" class="header__icon" />
+        </button>
+        <div class="header__separator header__separator--hidden-left"></div>
         <img src="img/Group.svg" alt="Логотип" class="header__logo" />
       </div>
-      <div class="header__right">
-        <img
-          src="img/call.svg"
-          alt="Сделать звонок"
-          class="header__icon header__icon--hidden"
-        />
-        <img
-          src="img/chat.svg"
-          alt="Открыть чат"
-          class="header__icon header__icon--hidden"
-        />
-        <img
-          src="img/profile.svg"
-          alt="Открыть профиль"
-          class="header__icon header__icon--hidden"
-        />
-        <div class="header__separator header__separator--right-hidden"></div>
-        <img src="img/repair.svg" alt="Создать заявку" class="header__icon" />
-        <img src="img/checkstatus.svg" alt="Поиск" class="header__icon" />
+      <div class="header__section header__section--right">
+        <button
+          class="header__call-btn btn-reset btn-animated header__control--hidden"
+        >
+          <img
+            src="img/call.svg"
+            alt="Сделать звонок"
+            class="header__icon header__icon--hidden"
+          />
+        </button>
+        <button
+          class="header__chat-btn btn-reset btn-animated header__control--hidden"
+        >
+          <img
+            src="img/chat.svg"
+            alt="Открыть чат"
+            class="header__icon header__icon--hidden"
+          />
+        </button>
+        <button
+          class="header__profile-btn btn-reset btn-animated header__control--hidden"
+        >
+          <img
+            src="img/profile.svg"
+            alt="Открыть профиль"
+            class="header__icon header__icon--hidden"
+          />
+        </button>
+        <div class="header__separator header__separator--hidden-right"></div>
+        <button class="header__repair-btn btn-reset btn-animated">
+          <img src="img/repair.svg" alt="Создать заявку" class="header__icon" />
+        </button>
+        <button class="header__status-btn btn-reset btn-animated">
+          <img src="img/checkstatus.svg" alt="Поиск" class="header__icon" />
+        </button>
       </div>
     </header>
     <main class="main">
-      <div class="heading">
-        <h1 class="heading__title">Услуги и сервисы</h1>
-        <div class="menu">
-          <figure class="menu__item menu__item--bid">
-            <figcaption>Оставить заявку</figcaption>
-            <img src="img/repair.svg" alt="Создать заявку" class="menu__icon" />
-          </figure>
-          <figure class="menu__item menu__item--search">
-            <figcaption>Статус ремонта</figcaption>
-            <img src="img/checkstatus.svg" alt="Поиск" class="menu__icon" />
-          </figure>
+      <section class="page-heading">
+        <h1 class="page-heading__title">Услуги и сервисы</h1>
+
+        <div class="actions-menu">
+          <button
+            class="actions-menu__btn actions-menu__btn--bid btn-reset btn-animated actions-menu__control--hidden"
+          >
+            <figure class="actions-menu__item actions-menu__item--bid">
+              <figcaption class="actions-menu__caption">
+                Оставить заявку
+              </figcaption>
+              <img
+                src="img/repair.svg"
+                alt="Создать заявку"
+                class="actions-menu__icon"
+              />
+            </figure>
+          </button>
+          <button
+            class="actions-menu__btn actions-menu__btn--search btn-reset btn-animated actions-menu__control--hidden"
+          >
+            <figure class="actions-menu__item actions-menu__item--search">
+              <figcaption class="actions-menu__caption">
+                Статус ремонта
+              </figcaption>
+              <img
+                src="img/checkstatus.svg"
+                alt="Поиск"
+                class="actions-menu__icon"
+              />
+            </figure>
+          </button>
         </div>
-      </div>
-      <ul class="list">
-        <li class="list__element">Ремонтируемые бренды</li>
-        <li class="list__element">Ремонтируемые устройства</li>
-        <li class="list__element">Цены на услуги</li>
-        <li class="list__element">Адреса сервисных центров</li>
-        <li class="list__element">Специальные цены</li>
-        <li class="list__element">Отзывы</li>
-      </ul>
-      <div class="content">
-        <div class="description">
-          <p class="description__paragraph">
+      </section>
+
+      <nav class="nav-list">
+        <ul class="nav-list__items">
+          <li class="nav-list__item">Ремонтируемые бренды</li>
+          <li class="nav-list__item">Ремонтируемые устройства</li>
+          <li class="nav-list__item">Цены на услуги</li>
+          <li class="nav-list__item">Адреса сервисных центров</li>
+          <li class="nav-list__item">Специальные цены</li>
+          <li class="nav-list__item">Отзывы</li>
+        </ul>
+      </nav>
+
+      <section class="promo">
+        <div class="promo__description">
+          <p class="promo__paragraph">
             Мы являемся авторизованным сервисным центром по ремонту техники
             Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
             официальной гарантией производителя.
           </p>
-          <p class="description__paragraph description__paragraph--expanded">
+          <p class="promo__paragraph promo__paragraph--expanded">
             Мы успешно работаем с 1992 года и заслужили репутацию надежного
             партнера
-            <span class="description__span description__paragraph--wide">
+            <span class="promo__highlight promo__highlight--wide">
               , что подтверждает большое количество постоянных клиентов. Мы
               гордимся тем, что к нам обращаются по рекомендациям и, в свою
               очередь, советуют нас родным и близким.
             </span>
           </p>
+
           <div class="read-more">
-            <img src="img/expand.svg" alt="Читать далее" />
-            <p class="read-more__link">Читать далее</p>
+            <button class="read-more__btn btn-reset">
+              <img
+                src="img/expand.svg"
+                alt="Читать далее"
+                class="read-more__icon"
+              />
+              <p class="read-more__link">Читать далее</p>
+            </button>
           </div>
         </div>
-        <img
-          src="img/PictureCopy.png"
-          alt="Изображение логотипа в офисе"
-          class="content__image"
-        />
-      </div>
+
+        <div class="promo__image--wrapper">
+          <img
+            src="img/PictureCopy.png"
+            alt="Изображение логотипа в офисе"
+            class="promo__image"
+          />
+        </div>
+      </section>
     </main>
   </body>
 </html>
