@@ -30,10 +30,134 @@ body {
   margin: 0; /* обнуление внешних отступов по умолчанию */
 }
 
+.menu {
+  display: flex;
+  flex-direction: column; /* вертикально */
+  height: 100vh;
+  box-sizing: border-box;
+  width: 320px;
+  padding: 24px 24px;
+}
+
+.menu__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* расположение элементов по центру */
+}
+
+.menu__header-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16.73px;
+}
+
+.menu__header-right {
+  display: flex;
+  align-items: center;
+}
+
+.menu__middle {
+  flex-grow: 1; /* занимает все доступное пространство */
+}
+
+.sidebar__list {
+  list-style-type: none; /* убрали маркеры */
+  padding: 0; /* обнуление внутренних отступов по умолчанию */
+  margin: 0; /* обнуление внешних отступов по умолчанию */
+}
+
+.sidebar__item {
+  margin-top: 32px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px; /* пространства между строками */
+  letter-spacing: -0.2px;
+  position: relative; /* нужно для абсолютного позиционирования псевдоэлемента */
+}
+
+.sidebar__list .sidebar__item a {
+  text-decoration: none; /* убрали подчеркивание у ссылок */
+  color: black;
+}
+
+.sidebar__list .sidebar__item a:focus {
+  color: #7e7e82;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar__list .sidebar__item a:hover {
+  color: #7e7e82;
+}
+
+.sidebar__list .sidebar__item a:focus::before {
+  position: absolute;
+  content: "";
+  height: 32px;
+  width: 8px;
+  border-radius: 4px; /* закругление углов */
+  background-color: #41f6d7;
+  left: -28px;
+}
+
+.menu__footer {
+  margin-top: auto; /* это «прижимает» футер к низу меню */
+}
+
+.menu__footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.menu__footer__btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-hover {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-hover:hover,
+.btn-hover:focus {
+  color: #7e7e82;
+}
+
+.mail {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px; /* пространства между строками */
+  letter-spacing: -0.2px;
+  margin: 16px 0 0 0;
+}
+
+.phone {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px; /* пространства между строками */
+  letter-spacing: -0.6px;
+  margin: 12px 0 0 0;
+}
+
+.btn__lang {
+  margin-top: 40px;
+}
+
 .main {
   background: #f8f8f8;
   padding: 0 16px; /* внутренний отступ 16px справа и слева*/
   box-sizing: border-box; /* св-во, включающее padding и border в общую ширину экрана */
+  position: relative;
+  overflow: hidden;
 }
 
 .header {
@@ -295,8 +419,29 @@ body {
   }
 }
 
-@media (min-width: 1120px) {
+@media (max-width: 1439px) {
+  .menu {
+    display: none; /* скрываем меню */
+  }
+}
+
+@media (min-width: 1440px) {
+  .menu {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .header {
+    display: none; /* при этом хедер можно скрыть */
+  }
+
+  body {
+    display: flex; /* меню слева, контент справа */
+  }
+
   .main {
+    flex: 1;
     padding: 0 32px;
   }
 
