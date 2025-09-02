@@ -105,20 +105,20 @@ body {
   margin-top: auto; /* это «прижимает» футер к низу меню */
 }
 
-.menu__footer__info {
+.menu__contacts {
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-top: 24px;
 }
 
-.menu__footer__btn {
+.menu__actions {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.btn-hover {
+.menu__lang-btn {
   padding: 0;
   border: none;
   font: inherit;
@@ -127,12 +127,12 @@ body {
   cursor: pointer;
 }
 
-.btn-hover:hover,
-.btn-hover:focus {
+.menu__lang-btn:hover,
+.menu__lang-btn:focus {
   color: #7e7e82;
 }
 
-.mail {
+.menu__mail {
   font-size: 16px;
   font-weight: 500;
   line-height: 24px; /* пространства между строками */
@@ -140,7 +140,7 @@ body {
   margin: 16px 0 0 0;
 }
 
-.phone {
+.menu__phone {
   font-size: 24px;
   font-weight: 700;
   line-height: 32px; /* пространства между строками */
@@ -148,7 +148,7 @@ body {
   margin: 12px 0 0 0;
 }
 
-.btn__lang {
+.menu__lang-switcher {
   margin-top: 40px;
 }
 
