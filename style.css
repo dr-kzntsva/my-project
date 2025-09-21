@@ -200,6 +200,7 @@ body {
   padding-top: 24px;
   display: flex;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 .page-heading::before {
@@ -237,7 +238,6 @@ body {
   width: 24px; /* ширина затемнения */
   height: 100%;
   pointer-events: none; /* чтобы клики проходили сквозь */
-  z-index: 1;
 }
 
 .nav-list::before {
@@ -347,6 +347,123 @@ body {
   gap: 8px; /* Расстояние между картинкой и текстом */
 }
 
+section {
+  margin-bottom: 24px; /* отступ вниз */
+}
+
+.brands__title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  background: linear-gradient(to right, #f8f8f8, #ffffff);
+  padding: 16px 0;
+  height: auto;
+  object-fit: cover;
+  color: #7e7e82;
+  text-transform: uppercase;
+  border-top: 1px solid #d9fff5;
+}
+
+.brand__item {
+  width: 240px;
+  height: 72px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.brand__open-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 0 1px;
+  width: 40px; /* Задайте одинаковую ширину */
+  height: 40px; /* Задайте одинаковую высоту */
+  border-radius: 50%;
+  background-color: white; /* Цвет фона кнопки */
+  border: 2px solid #ff3e79;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.brand__open-btn:hover,
+.brand__open-btn:focus {
+  background-color: #ff3e79; /* Цвет фона кнопки при наведении */
+  border-color: white; /* Цвет рамки кнопки при наведении */
+}
+
+.brand__open-icon {
+  fill: #ff3e79; /* цвет стрелки по умолчанию */
+  transition: fill 0.3s ease;
+}
+
+.brand__open-btn:hover .brand__open-icon,
+.brand__open-btn:focus .brand__open-icon {
+  fill: white; /* стрелка станет белой */
+}
+
+.swiper-pagination-bullet {
+  background-color: #dddddd;
+  opacity: 1; /* иногда нужно, чтобы цвет был виден */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #b5b6bc;
+}
+
+.brands__list-wrapper {
+  position: relative;
+  margin-left: -16px; /* равен spacing между слайдами, или паддингу родителя */
+  margin-right: -16px;
+}
+
+.brands__list-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px; /* ширина затемнения */
+  pointer-events: none; /* чтобы клики по слайдам проходили */
+  z-index: 10;
+}
+
+.brands__list-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #f8f8f8, rgba(255, 255, 255, 0));
+}
+
+.brands__list {
+  position: relative; /* нужно, чтобы позиционировать пагинацию относительно контейнера */
+  padding-bottom: 30px; /* добавляем место под точки */
+  padding-left: 16px; /* чтобы первый слайд не прилипал к краю */
+}
+
+.brands__list .swiper-slide {
+  width: 240px; /* ширина слайда */
+  height: 72px; /* высота слайда */
+  flex-shrink: 0; /* запрещаем сжимаемость слайда */
+}
+
+.brands__list .swiper-pagination {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.brands__toggle-btn {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .main {
     padding: 0 24px;
@@ -416,6 +533,100 @@ body {
   .promo__paragraph--expanded {
     display: block;
     margin-top: 1.5em;
+  }
+
+  .brands__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px; /* отступы между элементами */
+    padding: 0;
+  }
+
+  .brands__list .swiper {
+    margin: 0;
+    padding: 0;
+  }
+
+  .brand__item {
+    margin: 0;
+  }
+
+  .brands__list .swiper-wrapper {
+    display: contents; /* убираем swiper-wrapper как flex-контейнер */
+  }
+
+  .brands__list .swiper-slide {
+    width: calc((100% - 48px) / 3); /* 3 элемента в ряд */
+    flex: none;
+  }
+
+  /* скрываем лишние элементы */
+  .brands__list .swiper-slide.hidden {
+    display: none;
+  }
+
+  .brand__open-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 0 1px;
+    width: 40px; /* Задайте одинаковую ширину */
+    height: 40px; /* Задайте одинаковую высоту */
+    border-radius: 50%;
+    background-color: white; /* Цвет фона кнопки */
+    border: 2px solid #ff3e79;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+
+  .brand__open-btn:hover,
+  .brand__open-btn:focus {
+    background-color: #ff3e79; /* Цвет фона кнопки при наведении */
+    border-color: white; /* Цвет рамки кнопки при наведении */
+  }
+
+  .brand__open-icon {
+    fill: #ff3e79; /* цвет стрелки по умолчанию */
+    transition: fill 0.3s ease;
+  }
+
+  .brand__open-btn:hover .brand__open-icon,
+  .brand__open-btn:focus .brand__open-icon {
+    fill: white; /* стрелка станет белой */
+  }
+
+  .brands__list-wrapper {
+    margin: 24px 0;
+  }
+
+  .brands__list .swiper-pagination {
+    display: none;
+  }
+
+  .brands__list-wrapper::after {
+    display: none;
+  }
+
+  .brands__toggle-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit; /* Наследует шрифт от родителя */
+    color: inherit; /* Наследует цвет текста */
+    cursor: pointer;
+    display: inline-flex; /* Строит контент в строку */
+    align-items: center; /* Выравнивает по вертикали */
+    gap: 8px; /* Расстояние между картинкой и текстом */
+  }
+
+  .brands__toggle__link {
+    margin: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px; /* пространства между строками */
+    letter-spacing: -0.2px; /* пространства между символами */
+    color: #1b1c21;
   }
 }
 
@@ -499,5 +710,14 @@ body {
 
   .promo__highlight--wide {
     display: inline;
+  }
+
+  .brands__list {
+    gap: 16px 32px; /* отступы между элементами */
+  }
+
+  .brands__list .swiper-slide {
+    width: calc((100% - 96px) / 4); /* 4 элемента в ряд */
+    flex: none;
   }
 }
