@@ -1,0 +1,108 @@
+@use "../base/variables" as vars;
+
+.chat-form,
+.call-form {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  z-index: 50;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
+
+  &.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: vars.$font-weight-bold;
+    font-size: vars.$font-size-large-heading;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    padding-top: 32px;
+    padding-bottom: 24px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 40px;
+      width: 8px;
+      border-radius: 4px;
+      background-color: vars.$accent-color;
+      left: -4px;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: vars.$accent-color;
+  }
+
+  &__policy {
+    font-family: vars.$font-family;
+    font-weight: vars.$font-weight-regular;
+    font-size: vars.$font-size-medium;
+    line-height: 16px;
+    letter-spacing: 0px;
+    color: vars.$primary-color;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    a {
+      text-decoration: none;
+      color: vars.$secondary-color;
+    }
+  }
+
+  &__btn {
+    &-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &-send {
+      display: flex;
+      align-items: center;
+      align-self: flex-end;
+      gap: 13px;
+      padding: 4px 12px;
+      background-color: vars.$secondary-color;
+      color: vars.$background-color;
+      border: none;
+      text-transform: uppercase;
+      border-radius: 16px;
+      font-family: vars.$font-family;
+      font-weight: vars.$font-weight-bold;
+      font-size: vars.$font-size-small;
+      line-height: 24px;
+      letter-spacing: -0.15px;
+      text-align: right;
+      cursor: pointer;
+    }
+  }
+}
+
+input,
+textarea {
+  font-family: vars.$font-family;
+  font-weight: vars.$font-weight-regular;
+  font-size: vars.$font-size-body;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #b5b6bc;
+}

@@ -1,0 +1,16 @@
+@use "../base/variables" as vars;
+
+.title {
+  margin: 0 -16px;
+  font-weight: 400;
+  font-size: vars.$font-size-body;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  background: linear-gradient(to right, #f8f8f8, #ffffff);
+  padding: 16px;
+  height: auto;
+  object-fit: cover;
+  color: vars.$primary-color;
+  text-transform: uppercase;
+  border-top: 1px solid #d9fff5;
+}

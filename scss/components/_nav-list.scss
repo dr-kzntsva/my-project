@@ -1,0 +1,61 @@
+@use "../base/variables" as vars;
+
+.nav-list {
+  position: relative;
+  margin: 0 -16px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 24px;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(
+      to right,
+      rgba(248, 248, 248, 1),
+      rgba(248, 248, 248, 0)
+    );
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(
+      to left,
+      rgba(248, 248, 248, 1),
+      rgba(248, 248, 248, 0)
+    );
+  }
+
+  &__items {
+    list-style-type: none;
+    display: flex;
+    padding: 0 16px;
+    margin: 24px 0;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__item {
+    white-space: nowrap;
+    padding: 8px 16px;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    font-weight: vars.$font-weight-regular;
+    color: vars.$primary-color;
+
+    &:hover {
+      background-color: vars.$background-color;
+      border-color: #b8ffec;
+      border-radius: 6px;
+    }
+  }
+}
