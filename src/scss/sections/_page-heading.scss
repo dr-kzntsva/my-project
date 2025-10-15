@@ -1,0 +1,30 @@
+@import '../base/variables';
+
+.page-heading {
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+
+  &__title {
+    margin: 0;
+    font-weight: font-weight-bold;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    height: 40px;
+    width: 8px;
+    border-radius: 4px;
+    background-color: $accent-color;
+    left: -4px;
+  }
+}
+
+.actions-menu {
+  display: none;
+}

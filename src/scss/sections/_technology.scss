@@ -1,0 +1,105 @@
+@import '../base/variables';
+
+.technology {
+  &__item {
+    position: relative;
+    background-color: $background-color;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-top: 16px;
+
+    &-title {
+      font-weight: $font-weight-regular;
+      font-size: $font-size-body;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      color: #1b1c21;
+      margin: 16px 0 0 16px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__open-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 0 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $background-color;
+    border: 2px solid $secondary-color;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 16px 16px 0;
+
+    &:hover,
+    &:focus {
+      background-color: $secondary-color;
+      border-color: $background-color;
+    }
+
+    &:hover .technology__open-icon,
+    &:focus .technology__open-icon {
+      fill: $background-color;
+    }
+  }
+
+  &__open-icon {
+    fill: $secondary-color;
+    transition: fill 0.3s ease;
+  }
+
+  &__list {
+    position: relative;
+    padding-bottom: 30px;
+    padding-left: 16px;
+
+    &-wrapper {
+      position: relative;
+      margin-left: -16px;
+      margin-right: -16px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 24px;
+        pointer-events: none;
+        z-index: 10;
+        right: 0;
+        background: linear-gradient(to left, #f8f8f8, rgba(255, 255, 255, 0));
+      }
+    }
+
+    .swiper-slide {
+      width: 240px;
+      height: 160px;
+      flex-shrink: 0;
+    }
+
+    .swiper-pagination {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__toggle-btn {
+    display: none;
+  }
+}

@@ -1,26 +1,61 @@
 {
-  "dependencies": {
-    "swiper": "^12.0.1"
-  },
-  "name": "my-project",
+  "name": "web-last-block",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
-  "devDependencies": {
-    "sass": "^1.93.2"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dr-kzntsva/my-project.git"
-  },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "web",
+    "scss",
+    "html",
+    "javascript",
+    "webpack"
+  ],
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dr-kzntsva/my-project/issues"
+  "author": "Kata Academy",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "dev": "webpack --mode development",
+    "start": "webpack-dev-server --mode development --open",
+    "watch": "webpack --mode development --watch"
   },
-  "homepage": "https://github.com/dr-kzntsva/my-project#readme"
+  "browserslist": [
+    "last 2 versions",
+    "Firefox ESR",
+    "not OperaMini All",
+    "not dead"
+  ],
+  "devDependencies": {
+    "@babel/core": "7.5.5",
+    "@babel/preset-env": "7.5.5",
+    "autoprefixer": "^10.4.21",
+    "babel-loader": "8.0.6",
+    "copy-webpack-plugin": "^13.0.1",
+    "css-loader": "^7.1.2",
+    "file-loader": "4.2.0",
+    "gh-pages": "^6.3.0",
+    "html-webpack-plugin": "^5.6.4",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.2.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": "~14.18.3",
+    "npm": "~6.14.15"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "dependencies": {
+    "swiper": "^6.8.4"
+  }
 }
