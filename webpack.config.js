@@ -40,7 +40,12 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader, // Extract css to separate file
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '' // пустая строка — пути к ресурсам будут относительными
+            }
+          },
           'css-loader', // translates CSS into CommonJS
           'postcss-loader', // parse CSS and add vendor prefixes to CSS rules
           'sass-loader' // compiles Sass to CSS, using Node Sass by default
@@ -50,7 +55,12 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader, // вместо style-loader, чтобы собрать в отдельный файл
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: ''
+            }
+          },
           'css-loader'
         ]
       },
@@ -108,11 +118,13 @@ module.exports = {
     }),
 
     // Копируем картинки
-    new CopyWebpackPlugin([
-      {
-        from: './src/img',
-        to: 'img'
-      }
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './src/img',
+          to: 'img' // будет копироваться в output.path/img
+        }
+      ]
+    })
   ]
 }
