@@ -12,12 +12,6 @@ module.exports = {
     filename: './js/bundle.js'
   },
 
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src')
-    }
-  },
-
   // Source maps для удобства отладки
   devtool: 'source-map',
 
@@ -38,53 +32,21 @@ module.exports = {
 
       // Компилируем SCSS в CSS
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '' // пустая строка — пути к ресурсам будут относительными
-            }
-          },
+          MiniCssExtractPlugin.loader, // Extract css to separate file
           'css-loader', // translates CSS into CommonJS
           'postcss-loader', // parse CSS and add vendor prefixes to CSS rules
           'sass-loader' // compiles Sass to CSS, using Node Sass by default
         ]
       },
 
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: ''
-            }
-          },
-          'css-loader'
-        ]
-      },
-
       // Подключаем шрифты из css
-      // {
-      //   test: /\.(eot|ttf|woff|woff2)$/,
-      //   use: [
-      //     {
-      //       loader: 'file-loader?name=./fonts/[name].[ext]'
-      //     }
-      //   ]
-      // }
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        test: /\.(eot|ttf|woff|woff2)$/,
         use: [
           {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
-              // publicPath: '../fonts'
-              publicPath: 'fonts/'
-            }
+            loader: 'file-loader?name=./fonts/[name].[ext]'
           }
         ]
       },
@@ -98,6 +60,11 @@ module.exports = {
           }
         ]
       }
+
+      // {
+      //   test: /\.css$/,
+      //   use: ['css-loader']
+      // },
     ]
   },
   plugins: [
@@ -118,13 +85,11 @@ module.exports = {
     }),
 
     // Копируем картинки
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: './src/img',
-          to: 'img' // будет копироваться в output.path/img
-        }
-      ]
-    })
+    new CopyWebpackPlugin([
+      {
+        from: './src/img',
+        to: 'img'
+      }
+    ])
   ]
 }
